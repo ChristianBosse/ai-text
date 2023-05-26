@@ -118,3 +118,54 @@ form.addEventListener("keyup", (e) => {
         handleSubmit(e);
     }
 });
+
+let textarea = document.getElementById("txtArea");
+
+textarea.addEventListener("keydown", (e) => {
+    if (e.keycode === 13) {
+        autosize(true);
+    } else {
+        autosize();
+    }
+});
+
+function autosize(reset) {
+    let el = this;
+    el.style.cssText = "overflow: hidden !important";
+
+    if ((reset = true)) {
+        el.style.cssText = "height: 20px";
+    }
+
+    if (el.scrollHeight > 60) {
+        el.style.cssText = "overflow: scroll !important";
+        el.style.cssText = "height: 60px";
+        console.log("> 60");
+    } else if (el.scrollHeight < 60) {
+        el.style.cssText = "height: 20px";
+        console.log("< 60");
+    }
+}
+
+let userOptions = document.getElementById("user_profile");
+let userOptionsDiv = document.getElementById("user_options");
+let resetUserOption = 0;
+
+window.addEventListener("click", function (e) {
+    if (userOptions.contains(e.target) && resetUserOption == 1) {
+        userOptionsDiv.classList.remove("show");
+        userOptionsDiv.classList.add("hide");
+        resetUserOption = 0;
+        console.log(resetUserOption, "1");
+    } else if (userOptions.contains(e.target)) {
+        userOptionsDiv.classList.remove("hide");
+        userOptionsDiv.classList.add("show");
+        resetUserOption = 1;
+        console.log(resetUserOption, "2nd");
+    } else if (!userOptions.contains(e.target)) {
+        userOptionsDiv.classList.remove("show");
+        userOptionsDiv.classList.add("hide");
+        resetUserOption = 0;
+        console.log(resetUserOption, "3rd");
+    }
+});

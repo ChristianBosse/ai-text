@@ -6,11 +6,57 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>ChrisGPT | A ChatGPT Clone</title>
         <link rel="stylesheet" href="style.css" />
+        <script
+            src="https://kit.fontawesome.com/3ec252e88a.js"
+            crossorigin="anonymous"
+        ></script>
     </head>
     <body>
         <div id="app">
             <div id="chat_previous">
                 <button class="new_chat">New Chat</button>
+                <div id="last_chat">Coming Soon!</div>
+                <div id="user_options" class="hide">
+                    <div class="options_wrapper">
+                        <i class="fa-solid fa-life-ring icon-wrapper"
+                            ><span class="user_span_option"
+                                >User option</span
+                            ></i
+                        >
+                        <i class="fa-solid fa-trash-can icon-wrapper"
+                            ><span class="user_span_option"
+                                >User option</span
+                            ></i
+                        >
+                        <i class="fa-solid fa-user icon-wrapper"
+                            ><span class="user_span_option"
+                                >User option</span
+                            ></i
+                        >
+                        <i class="fa-solid fa-gear icon-wrapper"
+                            ><span class="user_span_option"
+                                >User option</span
+                            ></i
+                        >
+                        <i
+                            class="fa-solid fa-arrow-right-from-bracket icon-wrapper"
+                            ><span class="user_span_option"
+                                >User option</span
+                            ></i
+                        >
+                    </div>
+                </div>
+                <div id="user_profile">
+                    <a class="user_wrapper">
+                        <img
+                            class="user_img"
+                            src="assets/user.png"
+                            alt="User Profile Picture"
+                        />
+                        <p class="user_profile_name">UsernameGoesHere</p>
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </a>
+                </div>
             </div>
             <div id="Wrapper">
                 <div id="chat_container"></div>
@@ -20,11 +66,25 @@
                         rows="1"
                         cols="1"
                         placeholder="Ask ChrisGPT..."
+                        id="txtArea"
                     ></textarea>
                     <button type="submit"><img src="assets/send.svg" /></button>
                 </form>
             </div>
         </div>
         <script type="module" src="/script.js"></script>
+        <!-- <script>
+            const userOptions = () => {
+                let user_options = document.getElementById("user_options");
+
+                document.getElementById("user_options").onclick = function (e) {
+                    if (e.target != document.getElementById("user_options")) {
+                        console.log("You clicked outside");
+                    } else {
+                        console.log("You clicked inside");
+                    }
+                };
+            };
+        </script> -->
     </body>
 </html>
