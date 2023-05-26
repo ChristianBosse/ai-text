@@ -115,7 +115,8 @@ body {
 form {
     width: 70%;
     max-width: 1280px;
-    margin: 50px auto;
+    margin: 50px auto 5px auto;
+
     padding: 10px;
     background: #40414f;
 
@@ -336,4 +337,16 @@ form img {
     form {
         width: 90%;
     }
+}
+
+.links {
+    color: white;
+}
+.click_me {
+    color: white;
+}
+
+.link_wrapper {
+    display: flex;
+    justify-content: center;
 }
