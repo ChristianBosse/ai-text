@@ -311,3 +311,29 @@ form img {
     font-weight: normal;
     padding-left: 20px;
 }
+
+@media only screen and (max-width: 1366px) {
+    .hide-on-mobile {
+        display: none !important;
+    }
+    /* #chat_previous {
+        display: none;
+    } */
+    /* #Wrapper {
+        width: 100%;
+    } */
+    /* form {
+        width: 90%;
+    } */
+}
+@media only screen and (max-width: 1365px) {
+    #chat_previous {
+        display: none;
+    }
+    #Wrapper {
+        width: 100%;
+    }
+    form {
+        width: 90%;
+    }
+}
